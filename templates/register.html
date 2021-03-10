@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static%}
+
+{% block content %}
+<head>
+    <style>
+        .maindiv{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<div class="maindiv jumbotron container">
+
+    <form method="POST"  action="">
+        {% csrf_token %}
+        {{form|crispy }}
+        <input class="btn btn-success btn-lg" type="submit" value="Register">
+        <p>Already have an account <a href='{% url "login" %}'>Login</a></p>
+    </form>
+
+</div>
+{% endblock %}
